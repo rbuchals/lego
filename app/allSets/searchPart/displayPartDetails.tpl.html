@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<section data-ng-controller="SearchForPartCntl">
+    <h2>Display Part Details</h2>
+    <label for="partNumber">Part number:</label>
+    <input type="text" id="partNumber" name="partNumber" data-ng-model="model.partNumber"/>
+    <button type="button" data-ng-click="searchForPart()">Go!</button>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Thumbnail</th>
+            <th>Part Number</th>
+            <th>Part Name</th>
+            <th>Appeared from year</th>
+            <th>Appeared to year</th>
+            <th>Category</th>
+            <th>More Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- iterate over object from results -->
+            <tr data-ng-repeat="item in searchResults">
+                <td><img ng-src="{{item.part_img_url}}"/></td>
+                <td>{{item.part_id}}</td>
+                <td>{{item.part_name}}</td>
+                <td>{{item.year1}}</td>
+                <td>{{item.year2}}</td>
+                <td>{{item.category}}</td>
+                <td><a href="{{item.part_url}}">
+                    <button type="button"
+                            class="btn btn-info">Tell me more!</button></a>
+
+
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</section>
+</body>
+</html>

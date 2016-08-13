@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<section data-ng-controller="SearchForSetPartsCntl">
+    <h2>Display Parts in a set</h2>
+    <label for="setNumber">Set number:</label>
+    <input type="text" id="setNumber" name="setNumber" data-ng-model="model.setNumber"/>
+    <button type="button" data-ng-click="searchForSetParts()">Go!</button>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Thumbnail</th>
+            <th>Part Number</th>
+            <th>Part Count</th>
+            <th>Part Name</th>
+            <th>Color</th>
+            <th>More Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- iterate over object from results -->
+            <tr data-ng-repeat="item in searchResults">
+                <td><img ng-src="{{item.part_img_url}}" width="75px" height="75px"/></td>
+                <td>{{item.part_id}}</td>
+                <td>{{item.qty}}</td>
+                <td>{{item.part_name}}</td>
+                <td>{{item.color_name}}</td>
+                <td><button type="button"
+                            class="btn btn-info"
+                            data-ng-click="displayPartDetails(item.part_id)">Display Part Details</button></td>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+</section>
+</body>
+</html>
