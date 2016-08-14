@@ -1,4 +1,4 @@
-angular.module('app', ['ngRoute',  'app.main', 'app.allSets', 'app.mySets'])
+angular.module('app', ['ngRoute',  'app.main'])
     .config(function ($locationProvider) {
         'use strict';
         $locationProvider.html5Mode(false);
