@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+<section data-ng-controller="SearchForSetCntl">
+    <h2>Search for a lego set</h2>
+    <label for="query">Query string:</label>
+    <input type="text" id="query" name="query" data-ng-model="model.query"/>
+
+    <br>
+
+    <label for="query">Filter Sets By:</label>
+    <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="S" data-ng-model="model.type"> Set
+    </label>
+    <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="M" data-ng-model="model.type"> My Own Construction
+    </label>
+    <br>
+    <button type="button" data-ng-click="searchForLegoSet()">Go!</button>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Thumbnail</th>
+            <th>Set ID</th>
+            <th>Piece Count</th>
+            <th>Description</th>
+            <th>Theme</th>
+            <th>Year</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- iterate over object from results -->
+        <tr data-ng-repeat="item in searchResults">
+            <td><img ng-src="{{item.img_sm}}" alt="Description"/></td>
+            <td>{{item.set_id}}</td>
+            <td>{{item.pieces}}</td>
+            <td>{{item.descr}}</td>
+            <td>{{item.theme1}}</td>
+            <td>{{item.year}}</td>
+            <td class="centered-buttons">
+                <button type="button"
+                        class="btn btn-info"
+                        data-ng-click="displaySetParts(item.set_id)">Display Set parts</button>
+                <br>
+                <a href="{{item.url}}">
+                    <button type="button"
+                        class="btn btn-info">Show rebrickable info</button></a>
+
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+</section>
+</body>
+</html>
