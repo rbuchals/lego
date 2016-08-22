@@ -1,30 +1,7 @@
-angular.module('app.allSets').controller('SearchForSetCntl', function ($scope, $http, $location, $modal, currentContextPath) {
+angular.module('app.allSets').controller('SearchForSetCntl', function ($scope, $http, $location) {
     'use strict';
 
     $scope.model = { type: 'S' };
-
-    // Modal Start
-
-    $scope.openModalWantedItem = function (wantedItem) {
-
-        var wantedItemModalInstance = $modal.open({
-            animation: true,
-            ariaLabelledBy: 'modal-title',
-            ariaDescribedBy: 'modal-body',
-            templateUrl: 'allSets/wantedItem/wantedItem.html',
-            controller: 'WantedItemCntl',
-            resolve: {
-                wantedItem: function () {
-                    return wantedItem;
-                },
-                currentContextPath: function () {
-                    return currentContextPath;
-                }
-            }
-        });
-    };
-
-    // Modal End
 
     $scope.searchForLegoSet = function () {
         $http({
@@ -42,15 +19,6 @@ angular.module('app.allSets').controller('SearchForSetCntl', function ($scope, $
         }, function (response) {
             alert('Error during connection:' + response.status);
         });
-    };
-
-    $scope.displaySetParts = function (setID) {
-        $location.path('/allSets/searchParts').search({ set_id: setID });
-    };
-
-    $scope.markWanted = function (setID) {
-        var wantedItem = $scope.searchResults.filter(function (x) { return x['set_id'] === setID; });
-        $scope.openModalWantedItem(wantedItem);
     };
 
     var loadFromUrlParam = function () {
