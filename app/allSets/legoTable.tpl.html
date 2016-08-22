@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <table class="table table-bordered table-striped" ng-show="results.length > 0">
+        <thead>
+        <tr>
+            <th>Thumbnail</th>
+            <th>Set ID</th>
+            <th>Piece Count</th>
+            <th>Description</th>
+            <th>Theme</th>
+            <th>Year</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- iterate over object from results -->
+        <tr data-ng-repeat="item in results">
+            <td><img ng-src="{{item.img_sm}}" alt="Description"/></td>
+            <td>{{item.set_id}}</td>
+            <td>{{item.pieces}}</td>
+            <td>{{item.descr}}</td>
+            <td>{{item.theme1}}</td>
+            <td>{{item.year}}</td>
+            <td class="centered-buttons">
+                <button type="button"
+                        class="btn btn-primary"
+                        data-ng-click="markWanted(item.set_id)">Add to Wanted Items</button>
+                <br>
+                <button type="button"
+                        class="btn btn-info"
+                        data-ng-click="displaySetParts(item.set_id)">Display Set parts</button>
+                <br>
+                <a href="{{item.url}}">
+                    <button type="button"
+                        class="btn btn-info">Show rebrickable info</button></a>
+
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+    <div ng-show="results.length == 0">
+        <p>Result table is empty.</p>
+    </div>
+
+</body>
+</html>
