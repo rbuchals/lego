@@ -16,7 +16,7 @@ angular.module('app.allSets', ['ngRoute','app.allSets.templates', 'ui.bootstrap'
             link: function($scope) {
                 // Modal Start
 
-                $scope.openModalWantedItem = function (wantedItem) {
+                var openModalWantedItem = function (wantedItem) {
 
                     $modal.open({
                         animation: true,
@@ -43,7 +43,7 @@ angular.module('app.allSets', ['ngRoute','app.allSets.templates', 'ui.bootstrap'
 
                 $scope.markWanted = function (setID) {
                     var wantedItem = $scope.results.filter(function (x) { return x['set_id'] === setID; });
-                    $scope.openModalWantedItem(wantedItem);
+                    openModalWantedItem(wantedItem);
                 };
             }
         };
