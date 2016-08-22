@@ -17,7 +17,7 @@ angular.module('app.allSets').controller('WantedItemCntl', function ($scope, $mo
 
     $scope.markItemAsWanted = function (data) {
 
-        var formIsValid = $scope.wantedForm && $scope.wantedForm.$valid;
+        var formIsValid = $scope.wantedItemCntl.wantedForm && $scope.wantedItemCntl.wantedForm.$valid;
         if (formIsValid) {
             $http({
                 method: 'POST',
@@ -37,7 +37,7 @@ angular.module('app.allSets').controller('WantedItemCntl', function ($scope, $mo
       var
         errors = field && field.$error,
         fieldIsInvalid = field && field.$invalid,
-        formIsSubmitted = $scope.wantedForm && $scope.wantedForm.$submitted,
+        formIsSubmitted = $scope.wantedItemCntl.wantedForm && $scope.wantedItemCntl.wantedForm.$submitted,
         createErrorMessage = function (errorObject) {
           var errorCode;
           if (errorObject) {
