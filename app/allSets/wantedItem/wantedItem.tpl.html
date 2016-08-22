@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div class="modal-header">
+        <h3 class="modal-title">Do you really want to add wanted item?</h3>
+    </div>
+    <div class="modal-body">
+        Selected item: <b>{{ selectedItem.descr }}</b>
+        <form name="wantedItemCntl.wantedForm" novalidate>
+            <div class="row">
+                <div class="col-md-2 col-sm-3 col-xs-4 form-label">
+                    <label for="comment">Comment:</label>
+                </div>
+                <div class="col-md-4 col-sm-5 col-xs-6">
+                    <input id="comment" name="commentField" type="text" data-ng-model="wantedLegoItem.comment" data-ng-required="true"
+                        data-ng-maxlength="10">
+                    <span class="error-msg" data-ng-bind="getErrorMessageOfField(wantedItemCntl.wantedForm.commentField)"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-3 col-xs-4">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary" data-ng-click="ok()">OK</button>
+                    <button class="btn btn-warning" type="button" data-ng-click="cancel()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+    </div>
+</body>
+
+</html>

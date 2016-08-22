@@ -2,6 +2,7 @@
 <html>
 <body>
 <section data-ng-controller="SearchForSetCntl">
+
     <h2>Search for a lego set</h2>
     <label for="query">Query string:</label>
     <input type="text" id="query" name="query" data-ng-model="model.query"/>
@@ -41,6 +42,10 @@
             <td>{{item.year}}</td>
             <td class="centered-buttons">
                 <button type="button"
+                        class="btn btn-primary"
+                        data-ng-click="markWanted(item.set_id)">Add to Wanted Items</button>
+                <br>
+                <button type="button"
                         class="btn btn-info"
                         data-ng-click="displaySetParts(item.set_id)">Display Set parts</button>
                 <br>
@@ -53,7 +58,6 @@
         </tbody>
 
     </table>
-
 </section>
 </body>
 </html>
