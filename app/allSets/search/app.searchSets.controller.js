@@ -63,5 +63,3 @@ angular.module('app.allSets').controller('SearchForSetCntl', function ($scope, $
     loadFromUrlParam();
 
 });
-
-
