@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<section data-ng-controller="WantedSetsCntl">
+    <h2>Your wanted Sets</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Set Number</th>
+            <th>Wanted</th>
+            <th>Comment</th>
+            <th>More Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- iterate over object from results -->
+        <tr data-ng-repeat="item in searchResults">
+            <td>{{item.setNumber}}</td>
+            <td>{{item.wanted}}</td>
+            <td>{{item.comment}}</td>
+            <td>
+                <button type="button"
+                        class="btn btn-info"
+                        data-ng-click="displaySetDetails(item.setNumber)">Tell me more!</button>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+</section>
+</body>
+</html>
