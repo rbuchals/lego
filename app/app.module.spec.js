@@ -1,5 +1,5 @@
+'use strict';
 describe('\'app\' module', function () {
-    'use strict';
     var locationProvider;
 
     beforeEach(function () {

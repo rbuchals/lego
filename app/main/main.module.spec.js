@@ -1,5 +1,5 @@
+'use strict';
 describe('\'app.main\' module', function () {
-    'use strict';
     var routeProvider;
 
     beforeEach(function () {

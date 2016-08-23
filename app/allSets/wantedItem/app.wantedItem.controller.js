@@ -1,10 +1,10 @@
+'use strict';
 angular.module('app.allSets').controller('WantedItemCntl', function ($scope, $modalInstance, $http, wantedItem, currentContextPath) {
-    'use strict';
 
     $scope.selectedItem = wantedItem[0];
     $scope.wantedLegoItem = {
                 setNumber: wantedItem[0].set_id,
-                comment: "",
+                comment: '',
                 wanted: true
             }
     $scope.ok = function () {

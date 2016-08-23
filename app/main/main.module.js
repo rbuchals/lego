@@ -1,6 +1,6 @@
+'use strict';
 angular.module('app.main', ['ngRoute', 'app.main.templates'])
     .config(function ($routeProvider) {
-        'use strict';
         $routeProvider
             .when('/', {redirectTo: '/main'})
             .when('/main', {templateUrl: 'main/main.html'})

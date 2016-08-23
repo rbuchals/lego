@@ -1,5 +1,5 @@
+'use strict';
 angular.module('app.main').factory('currentContextPath', function ($window) {
-    'use strict';
     var contextPath = '';
     return {
         get: function () {
