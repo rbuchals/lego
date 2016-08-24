@@ -6,16 +6,16 @@ angular.module('app.allSets').controller('WantedItemCntl', function ($scope, $mo
                 setNumber: wantedItem[0].set_id,
                 comment: '',
                 wanted: true
-            }
+            };
     $scope.ok = function () {
-        $scope.markItemAsWanted(wantedItem);
+        $scope.markItemAsWanted();
     };
 
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     };
 
-    $scope.markItemAsWanted = function (data) {
+    $scope.markItemAsWanted = function () {
 
         var formIsValid = $scope.wantedItemCntl.wantedForm && $scope.wantedItemCntl.wantedForm.$valid;
         if (formIsValid) {
