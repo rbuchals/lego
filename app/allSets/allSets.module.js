@@ -18,7 +18,7 @@ angular.module('app.allSets', ['ngRoute','app.allSets.templates', 'ui.bootstrap'
 
                 $scope.openModalWantedItem = function (wantedItem) {
 
-                    var wantedItemModalInstance = $modal.open({
+                    $modal.open({
                         animation: true,
                         ariaLabelledBy: 'modal-title',
                         ariaDescribedBy: 'modal-body',

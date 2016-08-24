@@ -1,6 +1,9 @@
 'use strict';
 describe('\'app\' module', function () {
-    var locationProvider;
+
+    var 
+        $controller,
+        locationProvider;
 
     beforeEach(function () {
         module('ng', function ($locationProvider) {
@@ -10,10 +13,18 @@ describe('\'app\' module', function () {
         module('app');
     });
 
-    // This is necessary to trigger loading the modules above; use it to inject services once they are needed
-    beforeEach(inject());
+    beforeEach(inject(function (_$controller_) {
+        $controller = _$controller_;
+    }));
+
+    it('sets the \'Hello\' message', function () {
+        var $scope = {};
+			$controller('AppCntl', { $scope: $scope });
+			expect($scope.message).toBe('Hello');
+    });
 
     it('sets the \'Hashbang\' mode', function () {
         expect(locationProvider.html5Mode).toHaveBeenCalledWith(false);
     });
 });
+

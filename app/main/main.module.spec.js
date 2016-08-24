@@ -15,7 +15,7 @@ describe('\'app.main\' module', function () {
     beforeEach(inject());
 
     it('defines a route for the welcome dialog', function () {
-        expect(routeProvider.when).toHaveBeenCalledWith('/main', { templateUrl : 'main/welcome.html' });
+        expect(routeProvider.when).toHaveBeenCalledWith('/main', { templateUrl : 'main/main.html' });
     });
 
     it('defines the default route redirecting to the welcome dialog', function () {

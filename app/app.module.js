@@ -4,5 +4,5 @@ angular.module('app', ['ngRoute',  'app.main', 'app.allSets', 'app.mySets', 'ui.
         $locationProvider.html5Mode(false);
     })
     .controller('AppCntl', ['$scope', function($scope) {
-        $scope.message = 'Hello!';
+        $scope.message = 'Hello';
     }]);

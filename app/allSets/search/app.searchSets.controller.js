@@ -1,5 +1,5 @@
+'use strict';
 angular.module('app.allSets').controller('SearchForSetCntl', function ($scope, $http, $location) {
-    'use strict';
 
     $scope.model = { type: 'S' };
 
